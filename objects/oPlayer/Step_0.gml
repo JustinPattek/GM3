@@ -6,13 +6,6 @@ key_jump = keyboard_check_pressed(ord("W"));
 //Calculate Movement
 var move = key_right - key_left;
 hsp = move * walksp;
-vsp = vsp + grv;
-
-if(place_meeting(x,y+2,oWall) && key_jump)
-{
-	vsp = -7;
-}
-
 
 //Horizontal Collision
 if(place_meeting(x+hsp,y,oWall))
@@ -24,9 +17,15 @@ if(place_meeting(x+hsp,y,oWall))
 	}
 	hsp = 0;
 }
-x = x + hsp;
+
+if(can_walk)
+{
+	x = x + hsp;
+}
 
 //Vertical Collision
+vsp = vsp + grv;
+
 if(place_meeting(x,y+vsp,oWall))
 {
 	//sign returns 1 or -1 depending if parameter is positive or negative
@@ -36,4 +35,10 @@ if(place_meeting(x,y+vsp,oWall))
 	}
 	vsp = 0;
 }
+
 y = y + vsp;
+
+if(place_meeting(x,y+2,oWall) && key_jump)
+{
+	vsp = -7;
+}
