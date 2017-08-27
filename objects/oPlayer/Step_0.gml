@@ -3,6 +3,21 @@ key_left = keyboard_check(ord("A"));
 key_right = keyboard_check(ord("D"));
 key_jump = keyboard_check_pressed(ord("W"));
 
+//Get My Available actions
+if(instance_exists(oMenu_Action_Movement)){
+	can_walk = true;
+}
+else{
+	can_walk = false;
+}
+if(instance_exists(oMenu_Action_Shooting)){
+	can_shoot = true;
+}
+else{
+	can_shoot = false;
+}
+
+
 //Calculate Movement
 var move = key_right - key_left;
 hsp = move * walksp;
@@ -38,6 +53,7 @@ if(place_meeting(x,y+vsp,oWall))
 
 y = y + vsp;
 
+//Jumping
 if(place_meeting(x,y+2,oWall) && key_jump)
 {
 	vsp = -7;

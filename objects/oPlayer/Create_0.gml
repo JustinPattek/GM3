@@ -3,5 +3,6 @@ vsp = 0;
 grv = 0.3;
 walksp = 4;
 
-
+//Player Actions
 can_walk = false;
+can_shoot = false;

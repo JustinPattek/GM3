@@ -7,6 +7,7 @@ x = oMenu.x;
 y = oMenu.y;
 }
 else{
+oPlayer.can_walk = false;
 instance_destroy();
 instance_create_depth(oPlayer.x,oPlayer.y,-1, Action_Movement);
 }

@@ -8,5 +8,5 @@ y = oMenu.y;
 }
 else{
 instance_destroy();
-instance_create_depth(oPlayer.x,oPlayer.y,-1, Action_Movement);
+instance_create_depth(oPlayer.x,oPlayer.y,-1, Action_Shooting);
 }
