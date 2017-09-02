@@ -16,6 +16,7 @@ if(place_meeting(x,y+vsp,oWall))
 	}
 	vsp = 0;
 }
+
 y = y + vsp;
 
 key_down = keyboard_check(ord("S"));
